@@ -24,5 +24,4 @@ type_record := RECORD
     
 END;
 type_table := TABLE(hospitals, type_record);
-type_no_dup := DEDUP(SORT(type_table, type), type); // removing duplicates from the table
-OUTPUT(type_no_dup);
+type_no_dup := DEDUP(SORT(type_table, type), type);
