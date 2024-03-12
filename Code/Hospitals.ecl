@@ -22,7 +22,6 @@ output(reducedtable,named('Hospital_Data'));
 
 type_record := RECORD
     hospitals.type;
-    
     typecount:= COUNT(group);
     
 END;
