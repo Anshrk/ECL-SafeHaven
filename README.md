@@ -3,7 +3,7 @@
 ### Files
 
 1. BWR_AllInputData.ecl
-   1. Shows all the
+   1. Shows all the databases
 2. BWR_CleanChurches.ecl
    1. This file is used to demonstrate how to "clean" a raw dataset (Churches) and create an index to be used in a ROXIE service
 3. BWR_CreateCoreExample.ecl

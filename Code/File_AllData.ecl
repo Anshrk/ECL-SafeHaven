@@ -183,7 +183,7 @@ EXPORT HospitalRec := RECORD
     INTEGER2  ttl_staff;
     INTEGER2  beds;
     STRING45  trauma;
-    STRING15  helipad;
+    STRING15  helipad; // Y, NOT AVAILABLE, N
 END;
 
 EXPORT HospitalDS := DATASET('~safe::in::Hospitals',HospitalRec,CSV(HEADING(1)));
