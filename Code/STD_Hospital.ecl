@@ -13,7 +13,7 @@ EXPORT STD_HospitalRec := RECORD
     STRING35  city := Upper(UID_Hospitals.city);
     STRING2   state := Upper(UID_Hospitals.state);
     UNSIGNED3 zip   := (UNSIGNED3)(UID_Hospitals.zip);
-    UNSIGNED4 telephone := (UNSIGNED4)(UID_Hospitals.telephone);
+    UID_Hospitals.Telephone;
     STRING20  type := Upper(UID_Hospitals.type);
     STRING6   status := Upper(UID_Hospitals.status);
     STRING20  county := Upper(UID_Hospitals.county);
