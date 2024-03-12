@@ -7,8 +7,9 @@ reducedlayout := RECORD
     police.address;
     police.city;
     police.telephone;
+    police.state;
+    police.countyfips;
 END;
 
-
-
-OUTPUT(' ');
+reducedtable := table(police, reducedlayout);
+EXPORT Polices := reducedtable;
