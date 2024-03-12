@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-﻿OUTPUT('Hello world');
-=======
-﻿#option('ObfuscateOutput', true);
+#option('obfuscateOutput', true);
+
 IMPORT $;
 
-DISTRIBUTION($.File_AllData.HospitalDS, trauma);
->>>>>>> refs/remotes/origin/main
+DISTRIBUTION($.UID_Hospital, state_id);
