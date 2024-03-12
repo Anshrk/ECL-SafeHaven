@@ -16,5 +16,5 @@ EXPORT STD_Police := MODULE
         UNSIGNED4 telephone := (UNSIGNED4)(Police.telephone);
         UNSIGNED3 countyfips := (UNSIGNED3)(Police.countyfips);
     END;
-    EXPORT File := TABLE(Police, STD_PoliceRec) : PERSIST('~safe::byteme::persist::hospitals');
+    EXPORT File := TABLE(Police, STD_PoliceRec) : PERSIST('~safe::byteme::persist::Polices');
 END;
