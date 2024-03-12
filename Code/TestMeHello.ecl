@@ -1,10 +1,9 @@
-﻿#OPTION('obfuscateOutput', TRUE);
+﻿#option('ObfuscateOutput', true);
 IMPORT $;
-CrimeDS := $.File_AllData.CrimeDS;
-Sorted_CDS := SORT(CrimeDS, crime_rate_per_100000);
-Total := COUNT(CrimeDS);
-OUTPUT(Sorted_CDS[ROUND(0.4*Total)]);
-OUTPUT(Sorted_CDS[ROUND(0.6*Total)]);
-Reverse_CDS := SORT(CrimeDS, -crime_rate_per_100000);
-OUTPUT(Sorted_CDS);
-OUTPUT(Reverse_CDS);
+
+OUTPUT($.UID_Church);
+OUTPUT($.UID_City);
+OUTPUT($.UID_Fire);
+OUTPUT($.UID_FoodBank);
+OUTPUT($.UID_Hospital);
+OUTPUT($.UID_Police);
