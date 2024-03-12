@@ -41,4 +41,4 @@ STD_HospitalRec := RECORD
     UID_Hospitals.helipad; // Y, NOT AVAILABLE, N
 END;
 
-EXPORT STD_Hospital := TABLE(UID_Hospitals, STD_HospitalRec);
+EXPORT STD_Hospital := TABLE(UID_Hospitals, STD_HospitalRec) : PERSIST('~safe::byteme::persist::hospitals');
