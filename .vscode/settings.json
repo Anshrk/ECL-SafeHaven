@@ -1,5 +1,0 @@
-{
-    "ecl.launchConfiguration": "External",
-    "ecl.targetCluster": {},
-    "ecl.eclccPath": "/opt/HPCCSystems/9.4.28/clienttools/bin/eclcc"
-}
