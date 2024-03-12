@@ -1,15 +1,12 @@
-#OPTION('obfuscateOutput', TRUE);
 import $;
-import visualizer;
-churches := $.UID_Church;
+churchesDS := $.UID_Church;
 reducedlayout := record
-    churches.uid;
-    churches.name;
-    churches.street;
-    churches.city;
-    churches.state;
-    churches.zip;
-    churches.region;
+    churchesDS.uid;
+    churchesDS.name;
+    churchesDS.street;
+    churchesDS.city;
+    churchesDS.state;
+    churchesDS.zip;
+    churchesDS.region;
 END;
-reducedtable := table(churches,reducedlayout);
-output(reducedtable,named('Churches_Data'));
+EXPORT Churches := table(churchesDS,reducedlayout);
