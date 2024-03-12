@@ -1,4 +1,4 @@
-﻿IMPORT $,STD;
+﻿IMPORT STD;
 UpperIt(STRING txt) := Std.Str.ToUpperCase(txt);
 //These INDEXes are created (built) in BWR_CleanChurches
 CleanChurchRec := RECORD
@@ -10,6 +10,7 @@ CleanChurchRec := RECORD
     UNSIGNED1 affiliation; 
     UNSIGNED3 PrimaryFIPS; //New - will be added from Cities DS
 END;
+
 CleanChurchesDS    := DATASET('~SAFE::OUT::Churches',CleanChurchRec,FLAT);
 CleanChurchIDX     := INDEX(CleanChurchesDS,{city,state},{CleanChurchesDS},'~SAFE::IDX::Church::CityPay');
 CleanChurchFIPSIDX := INDEX(CleanChurchesDS,{PrimaryFIPS},{CleanChurchesDS},'~SAFE::IDX::Church::FIPSPay');
