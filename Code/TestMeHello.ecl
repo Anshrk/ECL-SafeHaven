@@ -1,7 +1,9 @@
-﻿IMPORT $;
+﻿#option('ObfuscateOutput', true);
+IMPORT $;
 
-City_Table := TABLE($.File_AllData.City_DS, {city});
-City_Dedup := DEDUP(City_Table, LEFT.city = RIGHT.city);
-
-OUTPUT(City_Dedup);
-OUTPUT(COUNT(City_Dedup));
+OUTPUT($.UID_Church);
+OUTPUT($.UID_City);
+OUTPUT($.UID_Fire);
+OUTPUT($.UID_FoodBank);
+OUTPUT($.UID_Hospital);
+OUTPUT($.UID_Police);
