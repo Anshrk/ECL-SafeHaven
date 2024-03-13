@@ -32,6 +32,9 @@ END;
 
 Layout STDCrimes(PreLayout L, StatesLayout R) := TRANSFORM
     SELF.state := R.state;
+    SELF.county_name := L.county_name;
+    SELF.crime_rate_per_100000 := L.crime_rate_per_100000;
+    SELF.county_fips := L.county_fips;
 END; 
 
 EXPORT File := 
