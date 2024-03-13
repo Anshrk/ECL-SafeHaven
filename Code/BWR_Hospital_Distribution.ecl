@@ -1,14 +1,16 @@
 #option('obfuscateOutput', true);
 IMPORT $, Visualizer;
 
-PD_County := $.Hospital_Distribution.Distribution_by_county;
+PD_County := TABLE($.Hospital_Distribution.Distribution_by_county, {
+    $.Hospital_Distribution.Distribution_by_county.county_fips,
+    $.Hospital_Distribution.Distribution_by_county.num_Hospital_stations
+});
 PD_state := $.Hospital_Distribution.Distribution_by_state;
 PD_city := $.Hospital_Distribution.Distribution_by_city;
 
-OUTPUT(PD_County);
-OUTPUT(PD_state);
-OUTPUT(PD_city);
+OUTPUT(PD_County,,'~safe::byteme::out::hospital_dist_county', OVERWRITE);
+OUTPUT(PD_state,,'~safe::byteme::out::hospital_dist_state', OVERWRITE);
+// OUTPUT(PD_city,,'~safe::byteme::out::hospital_dist_county', OVERWRITE);
 
-// OUTPUT(COUNT(PD_County));
-// Visualizer.Choropleth.USStates('Hospitals_Per_State',,'Hospital_Distribution_by_State');
-// Visualizer.Choropleth.USCounties('Hospitals_Per_County',,'Hospital_Distribution_by_County');
+Visualizer.Choropleth.USStates('Hospitals_Per_State','~safe::byteme::out::hospital_dist_state');
+Visualizer.Choropleth.USCounties('Hospitals_Per_County','~safe::byteme::out::hospital_dist_county');
