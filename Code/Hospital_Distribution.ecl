@@ -4,25 +4,25 @@ HospitalDS := $.STD_Hospital.File;
 
 EXPORT Hospital_Distribution := MODULE
 
-    PD_County_Fip := RECORD
+    HD_County_Fip := RECORD
         HospitalDS.county_name;
         HospitalDS.county_fips;
         UNSIGNED num_Hospital := COUNT(GROUP);
     END;
 
-    EXPORT Distribution_by_county := TABLE(HospitalDS, PD_County_Fip, county_fips);
+    EXPORT Distribution_by_county := TABLE(HospitalDS, HD_County_Fip, county_fips);
 
-    PD_State := RECORD
+    HD_State := RECORD
         HospitalDS.state;
         UNSIGNED num_Hospital := COUNT(GROUP);
     END;
 
-    EXPORT Distribution_by_state := TABLE(HospitalDS, PD_State, state);
+    EXPORT Distribution_by_state := TABLE(HospitalDS, HD_State, state);
 
-    PD_City := RECORD
+    HD_City := RECORD
         HospitalDS.City;
         UNSIGNED num_Hospital := COUNT(GROUP);
     END;
 
-    EXPORT Distribution_by_city := TABLE(HospitalDS, PD_city, city);
+    EXPORT Distribution_by_city := TABLE(HospitalDS, HD_city, city);
 END;
