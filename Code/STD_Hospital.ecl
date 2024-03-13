@@ -16,8 +16,8 @@ EXPORT STD_HospitalRec := RECORD
     UID_Hospitals.Telephone;
     STRING20  type := Upper(UID_Hospitals.type);
     STRING6   status := Upper(UID_Hospitals.status);
-    STRING20  county := Upper(UID_Hospitals.county);
-    UNSIGNED3 countyfips := (UNSIGNED3)(UID_Hospitals.countyfips);
+    STRING20  county_name := Upper(UID_Hospitals.county);
+    UNSIGNED3 county_fips := (UNSIGNED3)(UID_Hospitals.countyfips);
     UID_Hospitals.website;
     UID_Hospitals.state_id;
     UID_Hospitals.owner;

@@ -1,12 +1,14 @@
 import $;
-churchesDS := $.UID_Church;
+import visualizer;
+UID_churches := $.UID_Church;
 reducedlayout := record
-    churchesDS.uid;
-    churchesDS.name;
-    churchesDS.street;
-    churchesDS.city;
-    churchesDS.state;
-    churchesDS.zip;
-    churchesDS.region;
+    UID_churches.uid;
+    UID_churches.name;
+    UID_churches.street;
+    UID_churches.city;
+    UID_churches.state;
+    UID_churches.zip;
+    UID_churches.region;
 END;
-EXPORT Churches := table(churchesDS,reducedlayout);
+reducedtable := table(UID_churches,reducedlayout);
+EXPORT Churches := reducedtable;

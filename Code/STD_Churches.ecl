@@ -12,6 +12,7 @@ EXPORT Layout := RECORD
     STRING70 name := Upper(ChurchesDS.name);
     STRING35 street := Upper(ChurchesDS.street);
     STRING22 city := Upper(ChurchesDS.city);
+    STRING2  state := Upper(ChurchesDS.state);
     churchesDS.zip;
     STRING13 region := Upper(ChurchesDS.region);
 END;

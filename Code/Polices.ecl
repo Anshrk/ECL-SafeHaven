@@ -9,6 +9,7 @@ reducedlayout := RECORD
     police.telephone;
     police.state;
     police.countyfips;
+    police.county;
 END;
 
 reducedtable := table(police, reducedlayout);

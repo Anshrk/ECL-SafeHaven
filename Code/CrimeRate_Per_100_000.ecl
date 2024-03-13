@@ -4,7 +4,8 @@ EXPORT CrimeRate_Per_100_000 := MODULE
     CrimeDS := $.File_AllData.CrimeDS;
     EXPORT CrimeRate_Per_100000_layout := RECORD
         STRING county_name := '';
-        fip_code := (UNSIGNED4)((STRING1)CrimeDS.FIPS_ST + (STRING3)CrimeDS.FIPS_CTY);
+        UNSIGNED1 st_fips := (UNSIGNED1)CrimeDS.FIPS_ST;
+        UNSIGNED3 county_fips := (UNSIGNED3)CrimeDS.FIPS_CTY;
         crime_rate := (DECIMAL)CrimeDS.crime_rate_per_100000;
     END;
 

@@ -14,7 +14,8 @@ EXPORT STD_Police := MODULE
         STRING35  city := Upper(Police.city);
         STRING2   state := Upper(Police.state);
         UNSIGNED4 telephone := (UNSIGNED4)(Police.telephone);
-        UNSIGNED3 countyfips := (UNSIGNED3)(Police.countyfips);
+        UNSIGNED3 county_fips := (UNSIGNED3)(Police.countyfips);
+        STRING25  county_name := Upper(Police.county);
     END;
-    EXPORT File := TABLE(Police, STD_PoliceRec) : PERSIST('~safe::byteme::persist::hospitals');
+    EXPORT File := TABLE(Police, STD_PoliceRec) : PERSIST('~safe::byteme::persist::Polices');
 END;
