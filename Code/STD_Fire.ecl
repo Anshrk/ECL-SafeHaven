@@ -1,0 +1,9 @@
+IMPORT $;
+
+EXPORT STD_Fire := MODULE
+
+EXPORT Layout := RECORD
+    
+END;
+
+END;
