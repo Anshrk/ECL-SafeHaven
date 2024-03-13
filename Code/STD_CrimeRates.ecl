@@ -20,7 +20,6 @@ StatesLayout := RECORD
 END;
 
 preStatesDS := TABLE(StatesDS, StatesLayout);
-
 PreCrimesDS := TABLE(CrimeDS, PreLayout);
 
 Layout := RECORD
