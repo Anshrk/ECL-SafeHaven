@@ -2,13 +2,15 @@ IMPORT $, STD;
 
 Upper(STRING txt) := Std.Str.ToUpperCase(txt);
 
-UID_Hospitals := $.Hospitals;
+UID_Hospitals := $.UID_Hospital;
 
 EXPORT STD_Hospital := MODULE
 
 EXPORT STD_HospitalRec := RECORD
     UID_Hospitals.UID;
     UID_Hospitals.name;
+    UID_Hospitals.latitude;
+    UID_Hospitals.longitude;
     STRING80  address := Upper(UID_Hospitals.name);
     STRING35  city := Upper(UID_Hospitals.city);
     STRING2   state := Upper(UID_Hospitals.state);

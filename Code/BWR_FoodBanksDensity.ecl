@@ -2,4 +2,4 @@
 
 IMPORT $;
 
-OUTPUT($.FoodbanksDensity.file);
+OUTPUT(SORT($.FoodbanksDensity.file, state));

@@ -2,15 +2,16 @@ IMPORT $;
 
 FoodbanksDS := DISTRIBUTE($.foodbanks_Distribution.Distribution_by_state);
 SortedDS := SORT(FoodbanksDS, num_foodbanks);
+DedupDS := DEDUP(SortedDS, LEFT.state=RIGHT.state);
 
 
-MedianValue := SortedDS[ROUND(COUNT(SortedDS) / 2)].num_foodbanks;
+MedianValue := DedupDS[ROUND(COUNT(SortedDS) / 2)].num_foodbanks;
 
 EXPORT foodbanksDensity := MODULE
 
 EXPORT Layout := RECORD
-    $.foodbanks_Distribution.Distribution_by_state;
-    STRING density;
+    STRING2 state := FoodBanksDS.state;
+    INTEGER density;
 END;
 
 
@@ -18,11 +19,11 @@ Layout RatefoodbanksDensityInStates($.foodbanks_Distribution.foodbankstate L) :=
     SELF := L;
     isDense := L.num_foodbanks > MedianValue;
     SELF.density := IF(isDense,
-                        'DENSE',
-                        'SPARSE');
+                        1,
+                        0);
 END;
 
-EXPORT File := PROJECT(SortedDS, RatefoodbanksDensityInStates(LEFT), LOCAL);
+EXPORT File := PROJECT(DedupDS, RatefoodbanksDensityInStates(LEFT), LOCAL) : PERSIST('~safe::byteme::persist::foodbank_density');
 
 END;
 

@@ -11,6 +11,11 @@ CleanHospital_RECORD := RECORD
     HospitalDS.city;
     HospitalDS.county_fips;
     hospitalDS.county_name;
+    hospitalDS.latitude;
+    hospitalDS.longitude;
+    hospitalDS.address;
+    hospitalDS.state;
+    hospitalDS.telephone;
 END;
 
 
@@ -23,9 +28,9 @@ WriteHospitals := OUTPUT(CleanHospitals,, '~safe::byteme::out::hospitals', OVERW
 CleanHospitalsDS := DATASET('~safe::byteme::out::hospitals',CleanHospital_RECORD , FLAT);
 
 CleanHospitals_City_IDX := INDEX(CleanHospitalsDS, {city}, {CleanHospitalsDS}, '~safe::byteme::idx::hospitals_c');
-
 CleanHospitals_Type_City_IDX := INDEX(CleanHospitalsDS, {city, type}, {CleanHospitalsDS}, '~safe::byteme::idx::hospitals_ct');
 CleanHospitals_Fips_IDX := INDEX(CleanHospitalsDS, {county_fips, type}, {CleanHospitalsDS}, '~safe::byteme::idx::hospitals_fips');
+
 
 BuildHospitals_City_IDX := BUILD(cleanHospitals_city_idx, OVERWRITE);
 BuildHospitals_Type_City_IDX := BUILD(cleanHospitals_type_city_idx, OVERWRITE);

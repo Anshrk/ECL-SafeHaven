@@ -3,7 +3,7 @@ IMPORT $, Visualizer;
 
 PD_County := TABLE($.Hospital_Distribution.Distribution_by_county, {
     $.Hospital_Distribution.Distribution_by_county.county_fips,
-    $.Hospital_Distribution.Distribution_by_county.num_Hospital_stations
+    $.Hospital_Distribution.Distribution_by_county.num_Hospital
 });
 PD_state := $.Hospital_Distribution.Distribution_by_state;
 PD_city := $.Hospital_Distribution.Distribution_by_city;

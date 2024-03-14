@@ -10,6 +10,8 @@ reducedlayout := RECORD
     police.state;
     police.countyfips;
     police.county;
+    police.latitude;
+    police.longitude;
 END;
 
 reducedtable := table(police, reducedlayout);

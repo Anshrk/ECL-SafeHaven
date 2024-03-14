@@ -16,6 +16,8 @@ reducedlayout := record
     hospitalsDS.website;
     hospitalsDS.state_id;
     hospitalsDS.owner;
+    hospitalDS.latitude;
+    hospitalDS.longitude;
 end;
 EXPORT Hospitals := TABLE(hospitalsDS,reducedlayout);
 

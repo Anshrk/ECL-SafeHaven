@@ -5,7 +5,7 @@ Hospital_Layout := $.File_AllData.HospitalRec;
 
 UID_Hospital_Layout := RECORD
     UNSIGNED4 UID;
-    Hospital_Layout AND NOT [objectid];
+    RECORDOF(Hospital_Layout) AND NOT [objectid];
 END;
 
 
